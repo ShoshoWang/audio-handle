@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+  <head>
+    <title>chat demo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no" >
+    <meta name="version" content="0.0.20151012.1">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.gbtags.com/animate.css/3.1.1/animate.min.css"/>
+    <style type="text/css">
+      body{
+        background: #edeff0;
+        color: #777777;
+      }
+      /*底部样式*/
+      form{
+        margin-top: 10px;
+      }
+      .chat-pop{
+        position: relative;
+        max-width: 40%;
+        min-width: 40px;
+        padding: 10px;
+        font-size: 14px;
+        color: #fff;
+        background: #A0E75A;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        margin-left:10px; 
+      }
+      .chat-pop:before{
+        content: " ";
+        display: inline-block;
+        -webkit-transform: rotate(-145deg);
+        -ms-transform: rotate(-145deg);
+        transform: rotate(-145deg);
+        height: 12px;
+        width: 12px;
+        border-width: 1px ;
+        border-color: #A0E75A;
+        border-style: solid;
+        position: absolute;
+        top: 14px;
+        left: -5px;
+        background: #A0E75A;
+      }
+      #message{
+        height: 500px;
+        overflow-y:scroll;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 页面聊天内容 -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+             <!-- 定义唯一音频节约资源浪费/以及混淆 -->
+            <audio id="audio"  preload="preload" src="" style="display:none;"></audio>
+
+            <div class="panel">
+              <div class="panel-body">
+                <h4 class="text-center">多条音频播放处理</h3>
+                <hr/>
+                <div id="message">
+                  <!-- 一条语音 -->
+                    <div class="media">
+                      <div class="row">
+                          <!--头像-->
+                          <div class="col-md-2 col-sm-2 col-xs-2">
+                            <div class="media-left">
+                              <a href="#">
+                                <img class="media-object img-circle img-responsive" src="http://ww2.sinaimg.cn/crop.0.0.1080.1080.1024/d773ebfajw8eum57eobkwj20u00u075w.jpg" alt="头像">
+                              </a>
+                            </div>
+                          </div>
+                         <!--消息-->
+                          <div class="col-md-10 col-sm-10 col-xs-10">
+                            <div class="media-body">
+                              <h5 class="media-heading">cayley</h5>
+                              <div class="chat-pop" data-source="http://www.w3school.com.cn/i/song.mp3">
+                                <img  width="20px" class="img-responsive"  src="./img/leftvoice.png" alt="图标">
+                              </div>  
+                            </div>
+                          </div>
+                      </div>
+                    </div> 
+                    <!--两条语音 -->
+                    <div class="media">
+                        <div class="row">
+                            <!--头像-->
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object img-circle img-responsive" src="http://ww2.sinaimg.cn/crop.0.0.1080.1080.1024/d773ebfajw8eum57eobkwj20u00u075w.jpg" alt="头像">
+                                </a>
+                              </div>
+                            </div>
+                           <!--消息-->
+                            <div class="col-md-10 col-sm-10 col-xs-10">
+                              <div class="media-body">
+                                <h5 class="media-heading">cayley</h5>
+                                <div class="chat-pop" data-source="http://www.w3school.com.cn/i/horse.mp3">
+                                  <img  width="20px" class="img-responsive"  src="./img/leftvoice.png" alt="图标">
+                                </div>  
+                              </div>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <!--三条语音 -->
+                    <div class="media">
+                        <div class="row">
+                            <!--头像-->
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object img-circle img-responsive" src="http://ww2.sinaimg.cn/crop.0.0.1080.1080.1024/d773ebfajw8eum57eobkwj20u00u075w.jpg" alt="头像">
+                                </a>
+                              </div>
+                            </div>
+                           <!--消息-->
+                            <div class="col-md-10 col-sm-10 col-xs-10">
+                              <div class="media-body">
+                                <h5 class="media-heading">cayley</h5>
+                                <div class="chat-pop" data-source="http://www.w3school.com.cn/i/horse.mp3">
+                                  <img  width="20px" class="img-responsive"  src="./img/leftvoice.png" alt="图标">
+                                </div>  
+                              </div>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <!-- 四条语音 -->
+                    <div class="media">
+                        <div class="row">
+                            <!--头像-->
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object img-circle img-responsive" src="http://ww2.sinaimg.cn/crop.0.0.1080.1080.1024/d773ebfajw8eum57eobkwj20u00u075w.jpg" alt="头像">
+                                </a>
+                              </div>
+                            </div>
+                           <!--消息-->
+                            <div class="col-md-10 col-sm-10 col-xs-10">
+                              <div class="media-body">
+                                <h5 class="media-heading">cayley</h5>
+                                <div class="chat-pop" data-source="http://www.w3school.com.cn/i/song.mp3">
+                                  <img  width="20px" class="img-responsive"  src="./img/leftvoice.png" alt="图标">
+                                </div>  
+                              </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <!-- 五条语音 -->
+                    <div class="media">
+                        <div class="row">
+                            <!--头像-->
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                              <div class="media-left">
+                                <a href="#">
+                                  <img class="media-object img-circle img-responsive" src="http://ww2.sinaimg.cn/crop.0.0.1080.1080.1024/d773ebfajw8eum57eobkwj20u00u075w.jpg" alt="头像">
+                                </a>
+                              </div>
+                            </div>
+                           <!--消息-->
+                            <div class="col-md-10 col-sm-10 col-xs-10">
+                              <div class="media-body">
+                                <h5 class="media-heading">cayley</h5>
+                                <div class="chat-pop" data-source="http://www.w3school.com.cn/i/song.mp3">
+                                  <img  width="20px" class="img-responsive"  src="./img/leftvoice.png" alt="图标">
+                                </div>  
+                              </div>
+                            </div>
+                        </div>
+                    </div> 
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+   
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+      var myaudio=document.getElementById("audio");
+      myaudio.loop=false;
+
+
+      $("#message").on("click",".chat-pop",function(){
+        var aniimg=$(this).find("img"),
+            sou=$(this).data("source");
+
+        //判断一下当前是否正在播放
+        if($(this).hasClass("nowplaying")){
+          //暂停就是清空，以便下次继续点击时从新使用
+            myaudio.src="";
+            myaudio.pause();
+            aniimg.removeClass("animated flash infinite");
+            $(this).removeClass("nowplaying");
+
+        }else{
+            //让当前这个按钮添加动画和正在播放类，去除此区域的其他按钮动画和正在播放样式
+            $("#message").find(".chat-pop").removeClass("nowplaying");
+            $(this).addClass("nowplaying");
+            $("#message").find(".chat-pop").find("img").removeClass("animated flash infinite");
+            aniimg.addClass("animated flash infinite");
+            myaudio.src=sou;
+            myaudio.play();
+        }  
+
+      })
+      //添加监听自动播放完成后取出每个动画
+      myaudio.addEventListener("ended",function(){
+            var index=$(".nowplaying").index(".chat-pop");
+            var len=$(".chat-pop");
+            $("#message").find(".chat-pop").find("img").removeClass("animated flash infinite");
+            $("#message").find(".chat-pop").removeClass("nowplaying");
+            index++;
+            if(index<len){
+              $(".chat-pop").eq(index).trigger("click");
+            } 
+      });
+
+
+    </script>
+  </body>
+</html>
